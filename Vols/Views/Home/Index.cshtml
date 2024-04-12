@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+<style>
+    .jumbotron {
+        background-color: #f8f9fa;
+        padding: 4rem 2rem;
+        border-radius: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .lead {
+        font-size: 1.25rem;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+</style>
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">Bienvenue sur l'application <b>FlightManager</b></h1>
+    <p class="lead">Explorez et gérez les informations de vol.</p>
+    <p>Commencez dès maintenant en naviguant dans le menu.</p>
+    <p>
+        <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Vols" asp-action="Index">Découvrir les vols</a>
+    </p>
+</div>

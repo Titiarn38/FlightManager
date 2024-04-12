@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Vols.Models.Ville>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .btn-group > .btn {
+        margin-right: 10px; 
+    }
+</style>
+
+<div class="container">
+    <h1 class="display-4">Liste des Villes</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Ajouter une ville</a>
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nom</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Actions">
+                                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.IdVille">Détails</a>
+                                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.IdVille">Modifier</a>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdVille">Supprimer</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
